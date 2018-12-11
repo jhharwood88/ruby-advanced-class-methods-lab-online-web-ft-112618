@@ -37,15 +37,17 @@ class Song
     @@all.each.find { |song| song.name == name  }
   end
   
+  
   def self.find_or_create_by_name(name)
     
     my_song = self.find_by_name(name)
     
-    if my_song == nil
-      my_song = self.create_by_name(name)
-    end
-      my_song
+      if my_song == nil
+         my_song = self.create_by_name(name)
+      end
+         my_song
   end
+  
   
   def self.alphabetical
     @@all.sort_by { |song| song.name}
